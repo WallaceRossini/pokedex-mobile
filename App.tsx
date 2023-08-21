@@ -1,20 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Home } from '@screens/Home';
+import {useFonts} from "expo-font"
+import FontPokemonClassic from './src/assets/fonts/pokemon_classic.ttf'
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Pokemon_Classic': FontPokemonClassic
+  })
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <Home /> 
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
